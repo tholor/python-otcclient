@@ -130,7 +130,7 @@ class s3(otcpluginbase):
         elif( str(OtcConfig.SUBCOM_P1).startswith("s3://") and OtcConfig.S3RECURSIVE):
             # directory download
             s3bucket, s3dir = s3.parse_bucket_uri(OtcConfig.SUBCOM_P1)
-            utils_s3.download_file(Bucket=s3bucket, Prefix=s3dir, File=OtcConfig.SUBCOM_P2)
+            utils_s3.download_dir(Bucket=s3bucket, Prefix=s3dir, Local=OtcConfig.SUBCOM_P2)
         elif( str(OtcConfig.SUBCOM_P2).startswith("s3://") and OtcConfig.S3RECURSIVE):
             # directory upload
             s3bucket, s3dir = s3.parse_bucket_uri(OtcConfig.SUBCOM_P2)                        
